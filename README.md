@@ -42,7 +42,4 @@ docker-compose up --build
 API base URL: http://localhost:8080
 
 ### 4️⃣ Swagger Documentation
-
-```bash
 http://localhost:8080/swagger/index.html
-```
