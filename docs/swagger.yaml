@@ -1,0 +1,59 @@
+basePath: /api
+definitions:
+  model.Message:
+    properties:
+      content:
+        type: string
+      id:
+        type: integer
+      phone_number:
+        type: string
+      sent:
+        type: boolean
+      sent_at:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is an automatic message sender system.
+  title: Insider Message API
+  version: "1.0"
+paths:
+  /api/sent-messages:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/model.Message'
+            type: array
+      summary: Get sent messages
+  /api/start:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Start auto dispatcher
+  /api/stop:
+    post:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Stop auto dispatcher
+swagger: "2.0"
